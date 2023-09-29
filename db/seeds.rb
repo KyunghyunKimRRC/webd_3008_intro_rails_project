@@ -50,5 +50,5 @@ moves = JSON.parse(moves_json_data)
 
 moves.each do |move|
     type = Type.find_by(name: move['type'])
-    Move.find_or_create_by(name: move['ename'], power: move['power'], accuracy: move['accuracy'], type: type)
+    Move.find_or_create_by(name: move['ename'], power: move['power'], accuracy: move['accuracy'], type: type, pp: move['pp'])
 end
