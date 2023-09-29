@@ -1,3 +1,4 @@
 class Pokemon < ApplicationRecord
-    validates :name, :type, :base, presence: true, uniqueness: true
+    validates :id, :name, presence: true, uniqueness: true
+    validates :hp, :attack, :defense, :sp_attack, :sp_defense, :speed, presence: true
 end

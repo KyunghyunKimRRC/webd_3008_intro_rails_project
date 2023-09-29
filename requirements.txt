@@ -1,7 +1,11 @@
 pokemon
     name:string,
-    type:string,
-    base:text,
+    hp:integer,
+    attack:integer,
+    defense:integer,
+    sp_attack:integer,
+    sp_defense:integer,
+    speed:integer
 
 types
     name:string
