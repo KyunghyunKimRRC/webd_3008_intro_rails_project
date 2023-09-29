@@ -14,5 +14,4 @@ moves
     accuracy:integer
     name:string
     power:integer
-    pokemon_type:string
     type:references
