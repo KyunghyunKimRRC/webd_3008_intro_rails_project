@@ -1,5 +1,6 @@
 class Move < ApplicationRecord
   belongs_to :type
 
-  validates :name, :power, :accuracy, :type, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true 
+  validates :power, :accuracy, :type, presence: true
 end

@@ -40,3 +40,15 @@ pokedex.each do |pdex|
         PokemonType.find_or_create_by(pokemon: pokemon, type: type)
     end
 end
+
+# Move Seed
+moves_filename = Rails.root.join("db/moves.json")
+puts "Loading Pokemon Moves from the json file: #{moves_filename}"
+
+moves_json_data = File.read(moves_filename)
+moves = JSON.parse(moves_json_data)
+
+moves.each do |move|
+    type = Type.find_by(name: move['type'])
+    Move.find_or_create_by(name: move['ename'], power: move['power'], accuracy: move['accuracy'], type: type)
+end
