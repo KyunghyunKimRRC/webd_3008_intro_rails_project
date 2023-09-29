@@ -6,3 +6,37 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require 'json'
+
+Move.delete_all
+PokemonType.delete_all
+# Pokemon.delete_all
+Type.delete_all
+
+# Type Seed
+types_filename = Rails.root.join("db/types.json")
+puts "Loading Pokemon Types from the json file: #{types_filename}"
+
+types_json_data = File.read(types_filename)
+types = JSON.parse(types_json_data)
+
+# puts types[0]
+
+types.each do |type|
+    Type.find_or_create_by(name: type["english"])
+end
+
+# Pokedex Seed
+pokedex_filename = Rails.root.join("db/pokedex.json")
+puts "Loading Pokemons from the json file: #{pokedex_filename}"
+
+pokedex_json_data = File.read(pokedex_filename)
+pokedex = JSON.parse(pokedex_json_data)
+
+pokedex.each do |pdex|
+    pokemon = Pokemon.find_or_create_by(id: pdex['id'], name: pdex['name']['english'], hp: pdex['base']['HP'], attack: pdex['base']['Attack'], defense: pdex['base']['Defense'], sp_attack: pdex['base']['Sp. Attack'], sp_defense: pdex['base']['Sp. Defense'], speed: pdex['base']['Speed'])
+    pdex['type'].each do |t|
+        type = Type.find_by(name: t)
+        PokemonType.find_or_create_by(pokemon: pokemon, type: type)
+    end
+end
