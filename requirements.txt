@@ -1,0 +1,18 @@
+pokemon
+    name:string,
+    type:string,
+    base:text,
+
+types
+    name:string
+
+pokemon_type
+    pokemon:references
+    type:references
+
+moves
+    accuracy:integer
+    name:string
+    power:integer
+    pokemon_type:string
+    type:references
