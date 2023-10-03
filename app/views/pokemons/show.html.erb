@@ -1,3 +1,13 @@
 <% content_for(:html_title) {@pokemon.name} %>
-<h1>Pokemons#show</h1>
+<div>
+    <div class="mx-5">
+        <h2><%= @pokemon.name %></h2>
+        <p><strong>HP: </strong><%= @pokemon.hp %></p>
+        <p><strong>Attack: </strong><%= @pokemon.attack %></p>
+        <p><strong>Defense: </strong><%= @pokemon.defense %></p>
+        <p><strong>Sp_Attack: </strong><%= @pokemon.sp_attack %></p>
+        <p><strong>Sp_Defense: </strong><%= @pokemon.sp_defense %></p>
+        <p><strong>Speed: </strong><%= @pokemon.speed %></p>
+    </div>
+</div>
 <p>Find me in app/views/pokemons/show.html.erb</p>
