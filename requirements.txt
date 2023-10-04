@@ -18,4 +18,5 @@ moves
     accuracy:integer
     name:string
     power:integer
+    pp:integer
     type:references
