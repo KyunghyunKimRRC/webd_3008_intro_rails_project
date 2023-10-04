@@ -1,2 +1,10 @@
-<h1>Moves#show</h1>
-<p>Find me in app/views/moves/show.html.erb</p>
+<% content_for(:html_title) {@move.name} %>
+<div>
+    <div class="mx-5">
+        <h2><%= @move.name %></h2>
+        <p><strong>Type: </strong><%= @type.name %></p>
+        <p><strong>Power: </strong><%= @move.power %></p>
+        <p><strong>Accuracy: </strong><%= @move.accuracy %></p>
+        <p><strong>PP: </strong><%= @move.pp %></p>
+    </div>
+</div>
