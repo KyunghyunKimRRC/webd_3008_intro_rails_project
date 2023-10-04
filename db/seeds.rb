@@ -10,7 +10,7 @@ require 'json'
 
 Move.delete_all
 PokemonType.delete_all
-# Pokemon.delete_all
+Pokemon.delete_all
 Type.delete_all
 
 # Type Seed
