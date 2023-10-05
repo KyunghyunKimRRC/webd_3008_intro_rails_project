@@ -8,3 +8,32 @@
         <p><strong>PP: </strong><%= @move.pp %></p>
     </div>
 </div>
+<h1 class="mx-3">Pokemon</h1>
+<table class="table table-striped table-hover mx-3">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">HP</th>
+      <th scope="col">Attack</th>
+      <th scope="col">Defense</th>
+      <th scope="col">Sp_Attack</th>
+      <th scope="col">Sp_Defense</th>
+      <th scope="col">Speed</th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @pokemons.each do |pokemon| %>
+    <tr>
+      <th scope="row"><%= pokemon.id %></th>
+      <td><%= link_to pokemon.name, pokemon, class: "text-decoration-none" %></td>
+      <td><%= pokemon.hp %></td>
+      <td><%= pokemon.attack %></td>
+      <td><%= pokemon.defense %></td>
+      <td><%= pokemon.sp_attack %></td>
+      <td><%= pokemon.sp_defense %></td>
+      <td><%= pokemon.speed %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
