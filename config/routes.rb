@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   # get 'pokemons/index'
   # get 'pokemons/show'
   root to: 'home#index'
-  resources :pokemons, only: %i[index show]
+  resources :pokemons, only: %i[index show] do
+    collection do
+      get 'search'
+    end
+  end
   resources :moves, only: %i[index show]
 end
