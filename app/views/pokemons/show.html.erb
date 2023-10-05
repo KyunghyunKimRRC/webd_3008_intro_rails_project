@@ -1,6 +1,6 @@
 <% content_for(:html_title) {@pokemon.name} %>
 <div>
-    <div class="mx-5">
+    <div class="mx-3">
         <h2><%= @pokemon.name %></h2>
         <p><strong>Type: </strong><%= @type_name %></p>
         <p><strong>HP: </strong><%= @pokemon.hp %></p>
@@ -24,7 +24,7 @@
     <tbody>
     <% @moves.each do |move| %>
     <tr>
-      <td><%= link_to move.name, move %></td>
+      <td><%= link_to move.name, move, class: "text-decoration-none" %></td>
       <td><%= move.power %></td>
       <td><%= move.accuracy %></td>
       <td><%= @type_name %></td>

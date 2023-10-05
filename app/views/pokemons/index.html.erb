@@ -16,7 +16,7 @@
     <% @pokemons.each do |pokemon| %>
     <tr>
       <th scope="row"><%= pokemon.id %></th>
-      <td><%= link_to pokemon.name, pokemon %></td>
+      <td><%= link_to pokemon.name, pokemon, class: "text-decoration-none" %></td>
       <td><%= pokemon.hp %></td>
       <td><%= pokemon.attack %></td>
       <td><%= pokemon.defense %></td>
