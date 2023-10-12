@@ -1,8 +1,8 @@
 <div class="mx-3">
     <p>Pokemon found when searching for: <%= params[:keywords] %></p>
     <ul>
-        <% @pokemon.each do |p| %>
-        <li><%= link_to p.name, p, class: "text-decoration-none" %></li>
+        <% @search.each do |s| %>
+        <li><%= link_to s.name, s, class: "text-decoration-none" %></li>
         <% end %>
     </ul>
 </div>

@@ -21,11 +21,11 @@
     </ul>
     <%= form_with(url:search_pokemons_path, method: :get, local: true, class: "form my-2 my-lg-0") do %>
     <div class="row mx-1 my-3">
-        <div class="col-7">
+        <div class="col-5">
             <%= text_field_tag(:keywords, nil, class:"form-control mr-sm-2", placeholder: "Search Pokemon") %>
         </div>
-        <div class="col-2">
-          <%= select_tag(:category, options_for_select(["Select", "Moves"], params[:category]), class: "form-control") %>
+        <div class="col-4">
+          <%= select_tag(:category, options_for_select(["Pokemon", "Moves"], params[:category]), class: "form-control") %>
         </div>
         <div class="col">
             <%= submit_tag("Search", class: "btn btn-primary my-2 my-sm-0")%>
