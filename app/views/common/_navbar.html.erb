@@ -24,15 +24,13 @@
         <div class="col-7">
             <%= text_field_tag(:keywords, nil, class:"form-control mr-sm-2", placeholder: "Search Pokemon") %>
         </div>
+        <div class="col-2">
+          <%= select_tag(:category, options_for_select(["Select", "Moves"], params[:category]), class: "form-control") %>
+        </div>
         <div class="col">
             <%= submit_tag("Search", class: "btn btn-primary my-2 my-sm-0")%>
         </div>
     </div>
-<% end %>
-    <%# Search Bar %>
-    <%# <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> %>
+    <% end %>
   </div>
 </nav>
