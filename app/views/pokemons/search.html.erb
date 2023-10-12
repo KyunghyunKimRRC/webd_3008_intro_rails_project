@@ -1,5 +1,5 @@
 <div class="mx-3">
-    <p>Pokemon found when searching for: <%= params[:keywords] %></p>
+    <p>Result found when searching for: "<%= params[:keywords] %>" in the <%= params[:category] %> category</p>
     <ul>
         <% @search.each do |s| %>
         <li><%= link_to s.name, s, class: "text-decoration-none" %></li>
